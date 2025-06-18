@@ -1,0 +1,21 @@
+import zeltaPersonajes.*
+import wollok.game.*
+
+program Zelta{
+    game.width(14)
+	game.height(8)
+	game.cellSize(50)
+    game.boardGround("MARRON.jpg")
+    game.start()
+    game.addVisualCharacter(personaje)
+	game.addVisual(enemigo)
+    game.whenCollideDo(enemigo,{
+		personaje => personaje.chocarConRival_(enemigo)
+		if(personaje.vidas() == 0){
+			game.stop()
+		}
+	})
+    game.onTick(1.randomUpTo(5) * 300, "movimiento", {
+			enemigo.acercarseA_(personaje)
+		})
+}
