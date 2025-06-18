@@ -1,6 +1,6 @@
 import zeltaPersonajes.*
 import wollok.game.*
-
+import mapa.*
 program Zelta{
     game.width(14)
 	game.height(8)
@@ -18,4 +18,5 @@ program Zelta{
     game.onTick(1.randomUpTo(5) * 300, "movimiento", {
 			enemigo.acercarseA_(personaje)
 		})
+	mapping.dibujar()
 }
