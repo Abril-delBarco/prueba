@@ -23,9 +23,9 @@ object enemigo{
 	var property position = game.at(5,2)
 	
 	method acercarseA_(personaje){
-		var posPacman = personaje.position()
-		var newX = position.x() + if(posPacman.x() > position.x()) {1} else {-1}
-		var newY = position.y() + if(posPacman.y() > position.y()) {1} else {-1}
+		var posPersonaje = personaje.position()
+		var newX = position.x() + if(posPersonaje.x() > position.x()) {1} else {-1}
+		var newY = position.y() + if(posPersonaje.y() > position.y()) {1} else {-1}
 		
 		position = game.at(newX, newY)
 	}
